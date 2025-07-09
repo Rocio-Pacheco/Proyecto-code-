@@ -1,5 +1,7 @@
+@import "../base/variables";
+
 nav {
-  background-color: #292929;
+  background-color: $color-principal;
   padding: 0 40px;
   margin: 0;
   font-size: 1em;
@@ -7,7 +9,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
+}
   img {
     height: 48px;
     margin-right: 20px;
@@ -28,7 +30,7 @@ nav {
 
       a {
         text-decoration: none;
-        color: #ffffff;
+        color: $color-terciario;
         border: none;
         padding: 8px 16px;
         display: inline-block;
@@ -41,7 +43,7 @@ nav {
           display: block;
           height: 3px;
           width: 0;
-          background: #ffffff;
+          background: $color-secundario;
           border-radius: 2px;
           transition: width 0.3s;
           position: absolute;
@@ -50,8 +52,8 @@ nav {
         }
 
         &:hover {
-          color: #ffffff;
-          background: rgba(255, 255, 255, 0.04);
+          color: $color-secundario;
+          background: rgba($color-secundario, 0.08);
 
           &::after {
             width: 100%;
@@ -60,4 +62,3 @@ nav {
       }
     }
   }
-}

@@ -1,3 +1,5 @@
+@import "../base/variables";
+
 main {
   text-align: center;
   width: auto;
@@ -119,6 +121,67 @@ main {
 
 
   //?---------------COMPONENTES--------------------------//
+  
+main {
+  background-color: $color-fondo;
+  min-height: 100vh;
+  padding-bottom: 40px;
+
+  .hero, .presentacion {
+    background-color: $color-terciario;
+    color: $color-principal;
+    padding: 32px 0 16px 0;
+    text-align: center;
+    margin-bottom: 24px;
+    border-radius: 0 0 16px 16px;
+  }
+
+  h1, h4 {
+    color: $color-principal;
+  }
+
+  .row {
+    margin: 0;
+  }
+
+  .list-group-item {
+    background: $color-terciario;
+    color: $color-principal;
+    border: none;
+    margin-bottom: 4px;
+    transition: background 0.2s, color 0.2s;
+
+    &.active,
+    &:focus,
+    &:hover {
+      background: $color-secundario;
+      color: #fff;
+    }
+  }
+
+  section {
+    background: $color-terciario;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    padding: 20px 24px;
+    box-shadow: 0 2px 8px rgba($color-principal, 0.05);
+
+    img {
+      display: block;
+      margin: 12px auto 16px auto;
+      max-width: 120px;
+      height: auto;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba($color-principal, 0.08);
+      padding: 4px 8px;
+    }
+  }
+
+  ul {
+    margin-bottom: 0;
+  }
+}
   //?---------------COMPATIBILIDAD---------------//
   //?---------------ARMADO---------------//
   //?---------------PERIFERICOS---------------//
