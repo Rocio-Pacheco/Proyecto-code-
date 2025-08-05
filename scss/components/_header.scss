@@ -1,5 +1,104 @@
 @import "../base/variables";
 
+// =============================================================================
+// HEADER AND NAVIGATION STYLES
+// =============================================================================
+
+// Main navbar
+.navbar {
+  background-color: $color-principal;
+  border-bottom: 1px solid #495057;
+  transition: all 0.3s ease;
+  
+  .navbar-brand {
+    font-weight: 600;
+    font-size: 1.5rem;
+    
+    .brand-text {
+      color: #fff;
+    }
+  }
+  
+  .nav-link {
+    color: rgba($color-secundario, 0.08);
+    transition: color 0.3s ease;
+    
+    &:hover {
+      color: #adb5bd !important;
+    }
+  }
+}
+
+// Mobile navbar collapse animation
+#navbarToggleExternalContent {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform-origin: top;
+  overflow: hidden;
+  
+  &.collapse {
+    display: block;
+    height: 0;
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  
+  &.collapsing {
+    height: auto !important;
+    opacity: 0.7;
+  }
+  
+  &.show {
+    height: auto;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .bg-dark {
+    background-color: #212529 !important;
+    border-top: 2px solid #495057;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    
+    .navbar-nav {
+      li {
+        opacity: 0;
+        transform: translateX(-20px);
+        transition: all 0.3s ease;
+        transition-delay: calc(var(--item-index, 0) * 0.1s);
+        
+        a {
+          display: block;
+          padding: 0.75rem 1rem;
+          border-radius: 6px;
+          transition: all 0.3s ease;
+          
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateX(8px);
+            color: #fff !important;
+          }
+        }
+        
+        .btn-outline-light {
+          transition: all 0.3s ease;
+          border-color: rgba(255, 255, 255, 0.5);
+          
+          &:hover {
+            background-color: #fff;
+            color: #212529;
+            transform: scale(1.05);
+            border-color: #fff;
+          }
+        }
+      }
+    }
+  }
+  
+  &.show .navbar-nav li {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 nav {
   background-color: $color-principal;
   padding: 0 40px;
@@ -44,7 +143,7 @@ nav {
           height: 3px;
           width: 0;
           background: $color-secundario;
-          border-radius: 2px;
+
           transition: width 0.3s;
           position: absolute;
           left: 0;
